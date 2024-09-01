@@ -1,0 +1,8 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+    font-family: "kufi";
+    src: url("/fonts/ReemKufi-Bold.ttf");
+  }
