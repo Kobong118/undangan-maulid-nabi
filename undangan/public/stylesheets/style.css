@@ -554,28 +554,58 @@ video {
   --tw-contain-style:  ;
 }
 
-.absolute {
-  position: absolute;
+.typing {
+  /* overflow: hidden;
+    white-space: nowrap; */
+  /* border-right: 2px solid; */
+  animation: typing 3s linear;
+}
+
+.visible {
+  visibility: visible;
 }
 
 .relative {
   position: relative;
 }
 
-.bottom-0 {
-  bottom: 0px;
+.z-10 {
+  z-index: 10;
 }
 
-.left-0 {
-  left: 0px;
+.z-20 {
+  z-index: 20;
 }
 
-.right-0 {
-  right: 0px;
+.z-30 {
+  z-index: 30;
 }
 
-.top-0 {
-  top: 0px;
+.col-span-full {
+  grid-column: 1 / -1;
+}
+
+.row-satu {
+  grid-row: 1;
+}
+
+.m-auto {
+  margin: auto;
+}
+
+.mx-1 {
+  margin-left: 0.25rem;
+  margin-right: 0.25rem;
+}
+
+.mx-auto {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.my-1 {
+  margin-top: 0.25rem;
+  margin-bottom: 0.25rem;
 }
 
 .mb-8 {
@@ -590,6 +620,18 @@ video {
   margin-inline-start: auto;
 }
 
+.mt-10 {
+  margin-top: 2.5rem;
+}
+
+.mt-14 {
+  margin-top: 3.5rem;
+}
+
+.mt-2 {
+  margin-top: 0.5rem;
+}
+
 .mt-24 {
   margin-top: 6rem;
 }
@@ -602,16 +644,144 @@ video {
   margin-top: 2rem;
 }
 
+.block {
+  display: block;
+}
+
+.inline {
+  display: inline;
+}
+
 .flex {
   display: flex;
+}
+
+.grid {
+  display: grid;
+}
+
+.hidden {
+  display: none;
 }
 
 .h-full {
   height: 100%;
 }
 
+.h-screen {
+  height: 100vh;
+}
+
+.min-h-full {
+  min-height: 100%;
+}
+
 .w-40 {
   width: 10rem;
+}
+
+.w-screen {
+  width: 100vw;
+}
+
+.origin-bottom {
+  transform-origin: bottom;
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(-25%);
+    animation-timing-function: cubic-bezier(0.8,0,1,1);
+  }
+
+  50% {
+    transform: none;
+    animation-timing-function: cubic-bezier(0,0,0.2,1);
+  }
+}
+
+.animate-bounce {
+  animation: bounce 1s infinite;
+}
+
+@keyframes logo {
+  0%, 35% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+.animate-logo {
+  animation: logo 3s;
+}
+
+@keyframes masjid {
+  0% {
+    transform: translateY(12rem);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateY(0rem);
+    opacity: 1;
+  }
+}
+
+.animate-masjid {
+  animation: masjid 1s linear;
+}
+
+@keyframes masjid-b {
+  100% {
+    transform: translateY(0rem);
+    opacity: 1;
+  }
+
+  0% {
+    transform: translateY(12rem);
+    opacity: 0;
+  }
+}
+
+.animate-masjid-b {
+  animation: masjid-b 1s linear;
+}
+
+@keyframes masjid-lg {
+  0% {
+    transform: translateY(16rem);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateY(0rem);
+    opacity: 1;
+  }
+}
+
+.animate-masjid-lg {
+  animation: masjid-lg 1s linear;
+}
+
+@keyframes zoo2 {
+  0% {
+    background-size: 150%;
+  }
+
+  100% {
+    background-size: 108%;
+  }
+}
+
+.animate-zoo2 {
+  animation: zoo2 3s;
+}
+
+.grid-cols-stack {
+  grid-template-columns: repeat(12,1fr);
 }
 
 .flex-col {
@@ -622,24 +792,79 @@ video {
   align-items: center;
 }
 
+.justify-start {
+  justify-content: flex-start;
+}
+
+.scroll-smooth {
+  scroll-behavior: smooth;
+}
+
+.rounded {
+  border-radius: 0.25rem;
+}
+
+.border {
+  border-width: 1px;
+}
+
+.border-black {
+  --tw-border-opacity: 1;
+  border-color: rgb(0 0 0 / var(--tw-border-opacity));
+}
+
+.border-white {
+  --tw-border-opacity: 1;
+  border-color: rgb(255 255 255 / var(--tw-border-opacity));
+}
+
+.bg-turqu-prime {
+  --tw-bg-opacity: 1;
+  background-color: rgb(59 172 163 / var(--tw-bg-opacity));
+}
+
 .bg-white\/30 {
   background-color: rgb(255 255 255 / 0.3);
 }
 
 .bg-bg-m {
-  background-image: url('/images/bg-m.jpg');
+  background-image: url('/images/Background.gif');
 }
 
-.bg-cover {
-  background-size: cover;
+.bg-108\% {
+  background-size: 108%;
 }
 
-.bg-left-top {
-  background-position: left top;
+.bg-center {
+  background-position: center;
+}
+
+.px-1 {
+  padding-left: 0.25rem;
+  padding-right: 0.25rem;
+}
+
+.px-10 {
+  padding-left: 2.5rem;
+  padding-right: 2.5rem;
+}
+
+.px-8 {
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+.py-1 {
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
 }
 
 .font-kufi {
   font-family: kufi, sans-serif;
+}
+
+.font-zilla {
+  font-family: Zilla Slab, system-ui;
 }
 
 .text-2xl {
@@ -652,19 +877,44 @@ video {
   line-height: 1;
 }
 
+.text-base {
+  font-size: 1rem;
+  line-height: 1.5rem;
+}
+
 .text-xl {
   font-size: 1.25rem;
   line-height: 1.75rem;
 }
 
-.text-turqu {
+.text-black {
   --tw-text-opacity: 1;
-  color: rgb(64 224 208 / var(--tw-text-opacity));
+  color: rgb(0 0 0 / var(--tw-text-opacity));
+}
+
+.text-turqu-prime {
+  --tw-text-opacity: 1;
+  color: rgb(59 172 163 / var(--tw-text-opacity));
+}
+
+.shadow {
+  --tw-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+  --tw-shadow-colored: 0 1px 3px 0 var(--tw-shadow-color), 0 1px 2px -1px var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+
+.shadow-white {
+  --tw-shadow-color: #fff;
+  --tw-shadow: var(--tw-shadow-colored);
 }
 
 .backdrop-filter {
   -webkit-backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
   backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
+}
+
+.delay-3s {
+  animation-delay: 3s;
 }
 
 @font-face {
@@ -673,12 +923,155 @@ video {
   src: url("/fonts/ReemKufi-Bold.ttf");
 }
 
-@media (min-width: 768px) {
-  .md\:mt-8 {
+@font-face {
+  font-family: "Zilla Slab";
+
+  src: url("/fonts/ZillaSlab-Medium.ttf");
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes blink-caret {
+  from, to {
+    border-color: transparent;
+  }
+
+  50% {
+    border-color: black;
+  }
+}
+
+@media (min-width: 1024px) {
+  .lg\:col-del {
+    grid-column: 8;
+  }
+
+  .lg\:col-pat {
+    grid-column: 4;
+  }
+
+  .lg\:col-start-1 {
+    grid-column-start: 1;
+  }
+
+  .lg\:col-start-9 {
+    grid-column-start: 9;
+  }
+
+  .lg\:col-end-13 {
+    grid-column-end: 13;
+  }
+
+  .lg\:col-end-8 {
+    grid-column-end: 8;
+  }
+
+  .lg\:row-satu {
+    grid-row: 1;
+  }
+
+  .lg\:mt-3 {
+    margin-top: 0.75rem;
+  }
+
+  .lg\:mt-32 {
+    margin-top: 8rem;
+  }
+
+  .lg\:mt-8 {
     margin-top: 2rem;
   }
 
-  .md\:w-80 {
+  .lg\:block {
+    display: block;
+  }
+
+  .lg\:w-80 {
     width: 20rem;
+  }
+
+  .lg\:w-full {
+    width: 100%;
+  }
+
+  @keyframes masjid-lg {
+    0% {
+      transform: translateY(16rem);
+      opacity: 0;
+    }
+
+    100% {
+      transform: translateY(0rem);
+      opacity: 1;
+    }
+  }
+
+  .lg\:animate-masjid-lg {
+    animation: masjid-lg 1s linear;
+  }
+
+  @keyframes masjid-lg-b {
+    100% {
+      transform: translateY(0rem);
+      opacity: 1;
+    }
+
+    0% {
+      transform: translateY(16rem);
+      opacity: 0;
+    }
+  }
+
+  .lg\:animate-masjid-lg-b {
+    animation: masjid-lg-b 1s linear;
+  }
+
+  @keyframes zhv {
+    0% {
+      background-size: auto 150%;
+    }
+
+    100% {
+      background-size:  auto 100%;
+    }
+  }
+
+  .lg\:animate-zhv {
+    animation: zhv 3s;
+  }
+
+  @keyframes zoo {
+    0% {
+      background-size: 150%;
+    }
+
+    100% {
+      background-size: 100%;
+    }
+  }
+
+  .lg\:animate-zoo {
+    animation: zoo 3s;
+  }
+
+  .lg\:bg-100\% {
+    background-size: 100%;
+  }
+
+  .lg\:bg-hv {
+    background-size: auto 100%;
+  }
+
+  .lg\:text-base {
+    font-size: 1rem;
+    line-height: 1.5rem;
   }
 }
