@@ -4,7 +4,8 @@ module.exports = {
   theme: {
     fontFamily: {
       kufi: ["kufi", "sans-serif"],
-      zilla:["Zilla Slab", "system-ui"]
+      zilla:["Zilla Slab", "system-ui"],
+      amiri:["Amiri Quran","serif"]
     },
     extend: {
       backgroundImage: {
@@ -12,14 +13,22 @@ module.exports = {
         'bg-platen':"url('/images/platen.gif')",
         'aw' :"url('/images/bg-0.gif')",
         'start':"url('/images/start.png')",
-        'bg-1':"url('/images/bg-1.gif')"
+        'bg-1':"url('/images/bg-1.gif')",
+        'd-bl':"url('/images/d-bl.png')",
+        'd-br':"url('/images/d-br.png')",
+        'd-tr':"url('/images/d-tr.png')",
+        'd-tl':"url('/images/d-tl.png')",
+        'd-c':"url('/images/d-c.png')",
+        'd-cr':"url('/images/d-cr.png')",
+        'd-cl':"url('/images/d-cl.png')"
       },
       backgroundSize: {
         '108%':'108%',
         '100%' : '100%',
         '150%':'150%',
         'hv':'auto 100%',
-        'vw':'100vw'
+        'vw':'100vw',
+        '200':'200%'
       },
       colors: {
         'turqu':"#2a7060",
@@ -32,6 +41,9 @@ module.exports = {
         '3s': '3s',
         // tambahkan lebih banyak delay jika diperlukan
       },
+      animationIterationCount:{
+        '3':'3'
+      },
       animation: {
         zoo: 'zoo 3s',
         zoo2: 'zoo2 3s',
@@ -43,7 +55,10 @@ module.exports = {
         'masjid-b' :'masjid-b 1s linear',
         'masjid-lg-b':'masjid-lg-b 1s linear',
         'bintang-show' : 'bintang-show 3s ease-in-out',
-        'bintang-hidd' : 'bintang-hidd 3s ease-in-out'
+        'bintang-hidd' : 'bintang-hidd 3s ease-in-out',
+        'spin-slow': 'spin 6s linear infinite',
+        'scaleTransRot-l':' scalaTransRotL 3s linear',
+        'scaleTransRot-r':' scalaTransRotR 3s linear',
       },
       keyframes: {
         zoo: {
@@ -89,7 +104,21 @@ module.exports = {
         'bintang-hidd':{
             '0%':{transform:'translateY(2rem)',opacity:'0'},
           '100%':{transform:'translateY(0rem)',opacity:'1'}
-        }
+        },
+        scalaTransRotL:{
+          '0%':{transform:'scale(3.5) translateX(0%) rotate(360deg)'},
+          '100%':{transform:'scale(1) translateX(-50%) rotate(0deg)'}
+        },
+        scalaTransRotR:{
+          '0%':{transform:'scale(3.5) translateX(0%) rotate(-360deg)'},
+          '100%':{transform:'scale(1) translateX(50%) rotate(0deg)'}
+        },
+      },
+      translate:{
+        'm-50%':'-50%',
+        'm-45%':'-45%',
+        'm-40%':'-40%',
+        '50%':'50%'
       },
       gridTemplateColumns:{
         'stack':'repeat(12,1fr)'
@@ -105,7 +134,11 @@ module.exports = {
       height:{
         'h-screen-90':'90vh',
         'h-screen-80':'80vh'
-      }
+      },
+      space:{
+        '30rem':'30rem'
+      },
+
     },
   },
   plugins: [
@@ -113,6 +146,14 @@ module.exports = {
       const utilities = Object.entries(theme('animationDelay')).map(([key, value]) => {
         return {
           [`.${e(`delay-${key}`)}`]: { animationDelay: value },
+        };
+      });
+      addUtilities(utilities);
+    },
+    function ({ addUtilities, theme, e }) {
+      const utilities = Object.entries(theme('animationIterationCount')).map(([key, value]) => {
+        return {
+          [`.${e(`count-${key}`)}`]: { animationIterationCount: value },
         };
       });
       addUtilities(utilities);

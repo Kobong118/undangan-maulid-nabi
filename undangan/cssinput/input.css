@@ -11,6 +11,10 @@
   font-family: "Zilla Slab";
   src: url("/fonts/ZillaSlab-Medium.ttf");
 }
+@font-face {
+  font-family: "Amiri Quran", serif;
+  srs : url("/fonts/AmiriQuran-Regular.ttf");
+}
 @keyframes typing {
   from { width: 0; }
   to { width: 90%; }

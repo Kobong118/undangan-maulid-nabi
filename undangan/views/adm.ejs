@@ -1,59 +1,129 @@
 <section id="header"
-    class="w-screen h-screen bg-bg-m bg-108% lg:bg-100% bg-center font-zilla animate-zoo2 lg:animate-zoo text-turqu-prime">
-    <div class="flex relative ms-auto me-auto flex-col items-center backdrop-filter h-full bg-white/30">
-        <h1 class="text-5xl font-kufi mt-24 lg:mt-8  drop-shadow-lg shadow-black"><%- dataProperti.teks1 %></h1>
-        <h6 class="text-xl mt-4"><%- dataProperti.teks2 %></h6>
-        <div class="logo mt-8 mb-8">
-            <img class="lg:w-80 w-40 animate-logo" src="<%= dataProperti.logoSrc %>" alt="Al-Ukhuwwah Daarul Musthofa">
+    class="w-screen h-screen bg-bg-m bg-108% lg:bg-100% bg-center font-zilla animate-zoo2 delay-1s lg:animate-zoo text-turqu-prime">
+    <div class="grid grid-cols-stack w-full h-full overflow-hidden">
+        <div class="row-satu col-span-full flex relative ms-auto me-auto flex-col items-center backdrop-filter">
+            <h1 class="text-5xl font-kufi mt-24 lg:mt-8  drop-shadow-lg shadow-black"><%- dataProperti.teks1 %></h1>
+            <h6 class="text-xl mt-4"><%- dataProperti.teks2 %></h6>
+            <div class="logo mt-8 mb-8">
+                <img class="lg:w-80 w-40 animate-logo" src="/images/logo.gif" alt="Al-Ukhuwwah Daarul Musthofa">
+            </div>
+            <div class="kepada flex flex-col items-center">
+                <h6 class="text-xl"><%- dataProperti.teks3 %></h6>
+                <h5 class="text-2xl">
+                    <% if (nama!="" ) { %>
+                        <%= nama %>
+                            <% } %>
+                </h5>
+            </div>
+            <div class="buka mt-14 lg:mt-3 text-xl animate-bounce">
+                <a href="#badan" class="px-8 py-1 rounded border-black border"><span><svg
+                            xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                            class="bi bi-envelope-open inline mx-1 my-1" viewBox="0 0 16 16">
+                            <path
+                                d="M8.47 1.318a1 1 0 0 0-.94 0l-6 3.2A1 1 0 0 0 1 5.4v.817l5.75 3.45L8 8.917l1.25.75L15 6.217V5.4a1 1 0 0 0-.53-.882zM15 7.383l-4.778 2.867L15 13.117zm-.035 6.88L8 10.082l-6.965 4.18A1 1 0 0 0 2 15h12a1 1 0 0 0 .965-.738ZM1 13.116l4.778-2.867L1 7.383v5.734ZM7.059.435a2 2 0 0 1 1.882 0l6 3.2A2 2 0 0 1 16 5.4V14a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V5.4a2 2 0 0 1 1.059-1.765z" />
+                        </svg></span>
+                    <%= dataProperti.teks4 %>
+                </a>
+            </div>
         </div>
-        <div class="kepada flex flex-col items-center">
-            <h6 class="text-xl"><%- dataProperti.teks3 %></h6>
-            <h5 class="text-2xl">
-                <% if (nama!="" ) { %>
-                    <%= nama %>
-                        <% } %>
-            </h5>
-        </div>
-        <div class="buka mt-14 lg:mt-3 text-xl animate-bounce">
-            <a href="#badan" class="px-8 py-1 rounded border-black border"><span><svg xmlns="http://www.w3.org/2000/svg"
-                        width="16" height="16" fill="currentColor" class="bi bi-envelope-open inline mx-1 my-1"
-                        viewBox="0 0 16 16">
-                        <path
-                            d="M8.47 1.318a1 1 0 0 0-.94 0l-6 3.2A1 1 0 0 0 1 5.4v.817l5.75 3.45L8 8.917l1.25.75L15 6.217V5.4a1 1 0 0 0-.53-.882zM15 7.383l-4.778 2.867L15 13.117zm-.035 6.88L8 10.082l-6.965 4.18A1 1 0 0 0 2 15h12a1 1 0 0 0 .965-.738ZM1 13.116l4.778-2.867L1 7.383v5.734ZM7.059.435a2 2 0 0 1 1.882 0l6 3.2A2 2 0 0 1 16 5.4V14a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V5.4a2 2 0 0 1 1.059-1.765z" />
-                    </svg></span>
-                <%= dataProperti.teks4 %>
-            </a>
+        <div x-data="{visible:false}" x-intersect:enter="visible = true" x-intersect:leave="visible = false"
+            class="row-satu col-span-full flex justify-between items-center">
+            <div class="w-fit">
+                <img x-show="visible" x-bind:class="{'animate-scaleTransRot-l':visible}" src="/images/d-c.png"
+                    alt="circle" class="w-80 lg:w-[40rem] translate-x-m-50% ">
+            </div>
+            <div class="w-fit">
+                <img x-show="visible" x-bind:class="{'animate-scaleTransRot-r':visible}" src="/images/d-c.png"
+                    alt="circle" class="w-80 lg:w-[40rem] translate-x-50%">
+            </div>
         </div>
     </div>
 </section>
-<section id="badan" class="text-turqu-prime">
-    <div class="h-screen grid grid-cols-stack">
-        <div class="hero hidden lg:block lg:row-satu lg:col-del lg:col-start-1 lg:col-end-8">
-            <span class="m-auto">gambar hero</span>
+<section class="text-turqu-prime">
+    <div class="h-screen grid grid-cols-stack bg-turqu-prime gap-1">
+        <div x-data="{visible:false}" x-intersect:enter="visible = true" x-intersect:leave="visible = false"
+            class="hero hidden lg:block lg:row-satu lg:col-del lg:col-start-1 lg:col-end-9 ">
+            <div x-show="visible" x-bind:class="{'animate-zoo ':visible}"
+                class="rounded bg-bg-m bg-100% bg-center w-full h-full m-1">
+
+            </div>
         </div>
-        <div x-data="{visible:false}"
-            class="lg:row-satu lg:col-pat lg:col-start-9 lg:col-end-13 h-screen">
-            <!-- screen 1 -->
-            <div x-bind:class="visible? 'animate-zoo2 ':''" class="h-screen w-screen bg-bg-m bg-108% lg:bg-hv bg-center lg:animate-zhv lg:w-full grid grid-cols-stack relative">
-                <div :class="visible ? 'animate-bintang-hidd': ''" class="col-span-full row-satu z-10 bg-bg-1 bg-hv bg-top">
-                </div>
-                <div :class="visible ? 'animate-bintang-show': ''" class="h-h-screen-80 col-span-full row-satu font-zilla mt-10 text-center">
-                    <h1 class="text-xl lg:text-base"><%- dataProperti.teks5 %></h1>
-                    <h1 class="text-xl lg:text-base"><%- dataProperti.teks5a %></h1>
-                    <h4 class="text-base mt-2"><%- dataProperti.teks6 %></h4>
-                    <h4 class="text-2xl mt-2 font-kufi"><%- dataProperti.teks7 %></h4>
-                </div>
-                <div
-                x-init="
-                        import('/javascripts/observer.js').then(module => module.observeVisibility($el, isVisible => visible = isVisible))" class="bg-turqu-prime col-span-full z-30 row-dua mt-auto">
-                    <div class="bg-white border border-white rounded-full shadow-lg shadow-white text-turqu-prime my-2 mx-2 text-sm lg:text-xs"><%-
-                            dataProperti.teks8 %>
+        <!-- mobile -->
+        <div id="badan"
+            class="lg:row-satu lg:col-pat lg:col-start-9 lg:col-end-13 w-full lg:max-h-screen lg:overflow-y-scroll">
+            <!-- post 1 -->
+            <div x-data="{visible:false}" x-intersect:enter="visible = true" x-intersect:leave="visible = false"
+                class="h-screen w-screen lg:w-full">
+                <!-- frem post 1 -->
+                <div x-show="visible" x-bind:class="{'animate-zoo2 ':visible}"
+                    class="h-full w-full bg-bg-m bg-108% lg:bg-hv bg-center lg:animate-zhv grid grid-cols-stack relative m-1 rounded-md">
+                    <!-- gambar masjid -->
+                    <div :class="{'animate-bintang-hidd':visible}"
+                        class="col-span-full row-satu z-10 bg-bg-1 bg-100% bg-bottom bg-no-repeat">
+                    </div>
+                    <!-- tulisan -->
+                    <div :class="{'animate-bintang-show':visible}"
+                        class="col-span-full row-satu font-zilla text-center">
+                        <h1 class="text-xl lg:text-base mt-10"><%- dataProperti.teks5 %></h1>
+                        <h4 class="text-base mt-2"><%- dataProperti.teks6 %></h4>
+                        <div class="w-fit pt-1 mx-auto rounded-full mt-28 grid grid-cols-stack">
+                            <div class="row-satu col-span-full">
+                                <img class="w-48 animate-spin-slow" src="/images/d-c.png"
+                                    alt="Al-Ukhuwwah Daarul Musthofa">
+                            </div>
+                            <div :class="{'animate-logo':visible}"
+                                class="row-satu col-span-full flex justify-center items-center z-10">
+                                <img class="w-40" src="/images/logo3.png" alt="Al-Ukhuwwah Daarul Musthofa">
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
             <!-- screen2 -->
-            <div x-bind:class="visible? 'animate-zoo2 ':''" class="h-screen w-screen bg-bg-m bg-108% lg:bg-hv bg-center lg:animate-zhv lg:w-full grid grid-cols-stack relative">
-                
+            <div x-data="{visible:false}" x-intersect:enter="visible = true" x-intersect:leave="visible = false">
+                <!-- frem post 2 -->
+                <div x-show="visible" x-bind:class="{'animate-zoo2':visible}"
+                    class="h-screen bg-bg-m bg-108% lg:bg-hv bg-center lg:animate-zhv">
+                    <!-- canvas -->
+                     <div class="grid grid-cols-stack w-full h-full ">
+                        <!-- decorasi -->
+                         <div class="col-span-full h-full row-satu d-tr bg-d-tr bg-100% bg-right-top bg-no-repeat"></div>
+                         <div class="col-span-full h-full row-satu d-tl bg-d-tl bg-100% bg-left-top bg-no-repeat"></div>
+                         <div class="col-span-full h-full row-satu d-br bg-d-br bg-100% bg-right-bottom bg-no-repeat"></div>
+                         <div class="col-span-full h-full row-satu d-bl bg-d-bl bg-100% bg-left-bottom bg-no-repeat"></div>
+                         <!-- tekst -->
+                          <div class="col-span-full row-satu max-h-48 text-base text-center mt-36 lg:mt-28 mx-6 lg:mx-3">
+                            <div class="w-fit mx-auto font-amiri text-2xl">
+                                <h1>السلام عليكم ورحمة الله وبركاته</h1>
+                            </div>
+                            <div class="w-fit mx-auto text-base">
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat suscipit accusantium ea, distinctio, maiores aut corporis nisi dolore nesciunt vero accusamus, atque nemo reiciendis. Earum autem qui architecto quo nesciunt.
+                                Inventore incidunt nulla assumenda soluta provident aliquam eaque expedita libero! Quae tempora distinctio deserunt suscipit asperiores esse enim illum quasi sint provident quas obcaecati ea, rerum, magnam dolores quidem sed!</p>
+                            </div>
+                            <!-- ttd -->
+                             <div class="flex justify-between content-center text-sm mt-10">
+                                <div>
+                                    <strong>Aparat Setempat:</strong>
+                                    <br>
+                                    <br>
+                                    <strong class="border border-t-black">Bpk Rete kadus</strong>
+                                </div>
+                                <div>
+                                    <strong>DKM Masjid:</strong>
+                                    <br>
+                                    <br>
+                                    <strong class="border border-t-black">Bpk Haji saha</strong>
+                                </div>
+                                <div>
+                                    <strong>Pengurus/Rois:</strong>
+                                    <br>
+                                    <br>
+                                    <strong class="border border-t-black">Abuya Ahid</strong>
+                                </div>
+                             </div>
+                          </div>
+                     </div>
+                </div>
             </div>
         </div>
 
