@@ -758,54 +758,6 @@ video {
   animation: zoo2 3s;
 }
 
-@keyframes masjid {
-  0% {
-    transform: translateY(12rem);
-    opacity: 0;
-  }
-
-  100% {
-    transform: translateY(0rem);
-    opacity: 1;
-  }
-}
-
-.animate-masjid {
-  animation: masjid 1s linear;
-}
-
-@keyframes masjid-b {
-  100% {
-    transform: translateY(0rem);
-    opacity: 1;
-  }
-
-  0% {
-    transform: translateY(12rem);
-    opacity: 0;
-  }
-}
-
-.animate-masjid-b {
-  animation: masjid-b 1s linear;
-}
-
-@keyframes masjid-lg {
-  0% {
-    transform: translateY(16rem);
-    opacity: 0;
-  }
-
-  100% {
-    transform: translateY(0rem);
-    opacity: 1;
-  }
-}
-
-.animate-masjid-lg {
-  animation: masjid-lg 1s linear;
-}
-
 .grid-cols-stack {
   grid-template-columns: repeat(12,1fr);
 }
@@ -866,16 +818,8 @@ video {
   background-image: url('/images/Background.gif');
 }
 
-.bg-start {
-  background-image: url('/images/start.png');
-}
-
 .bg-108\% {
   background-size: 108%;
-}
-
-.bg-cover {
-  background-size: cover;
 }
 
 .bg-hv {
@@ -940,10 +884,6 @@ video {
 .text-turqu-prime {
   --tw-text-opacity: 1;
   color: rgb(59 172 163 / var(--tw-text-opacity));
-}
-
-.opacity-0 {
-  opacity: 0;
 }
 
 .shadow-lg {
@@ -1079,38 +1019,6 @@ video {
 
   .lg\:animate-zoo {
     animation: zoo 3s;
-  }
-
-  @keyframes masjid-lg {
-    0% {
-      transform: translateY(16rem);
-      opacity: 0;
-    }
-
-    100% {
-      transform: translateY(0rem);
-      opacity: 1;
-    }
-  }
-
-  .lg\:animate-masjid-lg {
-    animation: masjid-lg 1s linear;
-  }
-
-  @keyframes masjid-lg-b {
-    100% {
-      transform: translateY(0rem);
-      opacity: 1;
-    }
-
-    0% {
-      transform: translateY(16rem);
-      opacity: 0;
-    }
-  }
-
-  .lg\:animate-masjid-lg-b {
-    animation: masjid-lg-b 1s linear;
   }
 
   .lg\:bg-100\% {
