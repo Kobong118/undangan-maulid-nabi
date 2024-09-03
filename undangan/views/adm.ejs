@@ -1,13 +1,13 @@
 <section id="header"
-    class="head w-screen h-screen bg-bg-m bg-108% lg:bg-100% bg-center font-zilla animate-zoo2 lg:animate-zoo">
+    class="w-screen h-screen bg-bg-m bg-108% lg:bg-100% bg-center font-zilla animate-zoo2 lg:animate-zoo text-turqu-prime">
     <div class="flex relative ms-auto me-auto flex-col items-center backdrop-filter h-full bg-white/30">
-        <h1 x-text="<%= dataProperti.teks1 %>" class="text-5xl font-kufi mt-24 lg:mt-8 text-turqu-prime"></h1>
-        <h6 x-text="<%= dataProperti.teks2 %>" class="text-xl mt-4"></h6>
+        <h1 class="text-5xl font-kufi mt-24 lg:mt-8  drop-shadow-lg shadow-black"><%- dataProperti.teks1 %></h1>
+        <h6 class="text-xl mt-4"><%- dataProperti.teks2 %></h6>
         <div class="logo mt-8 mb-8">
             <img class="lg:w-80 w-40 animate-logo" src="<%= dataProperti.logoSrc %>" alt="Al-Ukhuwwah Daarul Musthofa">
         </div>
         <div class="kepada flex flex-col items-center">
-            <h6 x-text="<%= dataProperti.teks3 %>" class="text-xl"></h6>
+            <h6 class="text-xl"><%- dataProperti.teks3 %></h6>
             <h5 class="text-2xl">
                 <% if (nama!="" ) { %>
                     <%= nama %>
@@ -20,37 +20,40 @@
                         viewBox="0 0 16 16">
                         <path
                             d="M8.47 1.318a1 1 0 0 0-.94 0l-6 3.2A1 1 0 0 0 1 5.4v.817l5.75 3.45L8 8.917l1.25.75L15 6.217V5.4a1 1 0 0 0-.53-.882zM15 7.383l-4.778 2.867L15 13.117zm-.035 6.88L8 10.082l-6.965 4.18A1 1 0 0 0 2 15h12a1 1 0 0 0 .965-.738ZM1 13.116l4.778-2.867L1 7.383v5.734ZM7.059.435a2 2 0 0 1 1.882 0l6 3.2A2 2 0 0 1 16 5.4V14a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V5.4a2 2 0 0 1 1.059-1.765z" />
-                    </svg></span><%= dataProperti.teks4 %></a>
+                    </svg></span>
+                <%= dataProperti.teks4 %>
+            </a>
         </div>
     </div>
 </section>
-<section id="badan" class="">
+<section id="badan" class="text-turqu-prime">
     <div class="h-screen grid grid-cols-stack">
         <div class="hero hidden lg:block lg:row-satu lg:col-del lg:col-start-1 lg:col-end-8">
             <span class="m-auto">gambar hero</span>
         </div>
-        <div x-data="{visible:false}" 
-            x-init="
-                    import('/javascripts/observer.js').then(module => module.observeVisibility($el, isVisible => visible = isVisible))"
-            class="lg:row-satu lg:col-pat lg:col-start-9 lg:col-end-13 h-screen bg-bg-m bg-108% lg:bg-hv bg-center animate-zoo2 lg:animate-zhv">
-            <div class="w-screen lg:w-full grid grid-cols-stack relative">
-                <div class="col-span-full row-satu z-10">
-                    <img :class="visible ? 'animate-masjid lg:animate-masjid-lg': 'animate-masjid-b lg:animate-masjid-lg-b'" src="/images/bg-1.gif"
-                        alt="gambar-0" width="70%" class="block mx-auto mt-24 lg:mt-32 origin-bottom">
-
+        <div x-data="{visible:false}"
+            class="lg:row-satu lg:col-pat lg:col-start-9 lg:col-end-13 h-screen">
+            <!-- screen 1 -->
+            <div x-bind:class="visible? 'animate-zoo2 ':''" class="h-screen w-screen bg-bg-m bg-108% lg:bg-hv bg-center lg:animate-zhv lg:w-full grid grid-cols-stack relative">
+                <div :class="visible ? 'animate-bintang-hidd': ''" class="col-span-full row-satu z-10 bg-bg-1 bg-hv bg-top">
                 </div>
-                <div class="col-span-full row-satu z-20 font-zilla mt-10">
-                    <div class="flex flex-col items-center justify-start min-h-full">
-                        <h1 class="text-xl lg:text-base typing"><%- dataProperti.teks5 %></h1>
-                        <h1 class="text-xl lg:text-base typing delay-3s"><%- dataProperti.teks5a %></h1>
-                        <h4 class="text-base mt-2"><%- dataProperti.teks6 %></h4>
-                        <h4 class="text-2xl mt-2 font-kufi"><%- dataProperti.teks7 %></h4>
+                <div :class="visible ? 'animate-bintang-show': ''" class="h-h-screen-80 col-span-full row-satu font-zilla mt-10 text-center">
+                    <h1 class="text-xl lg:text-base"><%- dataProperti.teks5 %></h1>
+                    <h1 class="text-xl lg:text-base"><%- dataProperti.teks5a %></h1>
+                    <h4 class="text-base mt-2"><%- dataProperti.teks6 %></h4>
+                    <h4 class="text-2xl mt-2 font-kufi"><%- dataProperti.teks7 %></h4>
+                </div>
+                <div
+                x-init="
+                        import('/javascripts/observer.js').then(module => module.observeVisibility($el, isVisible => visible = isVisible))" class="bg-turqu-prime col-span-full z-30 row-dua mt-auto">
+                    <div class="bg-white border border-white rounded-full shadow-lg shadow-white text-turqu-prime my-2 mx-2 text-sm lg:text-xs"><%-
+                            dataProperti.teks8 %>
                     </div>
                 </div>
             </div>
-            <div class="quot px-10 z-30 relative">
-                <div class="bg-turqu-prime text-black px-1 py-1 border border-white rounded shadow shadow-white"><%- dataProperti.teks8 %>
-                </div>
+            <!-- screen2 -->
+            <div x-bind:class="visible? 'animate-zoo2 ':''" class="h-screen w-screen bg-bg-m bg-108% lg:bg-hv bg-center lg:animate-zhv lg:w-full grid grid-cols-stack relative">
+                
             </div>
         </div>
 

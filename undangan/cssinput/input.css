@@ -13,7 +13,7 @@
 }
 @keyframes typing {
   from { width: 0; }
-  to { width: 100%; }
+  to { width: 90%; }
 }
 
 @keyframes blink-caret {
@@ -22,8 +22,9 @@
 }
 @layer components{
   .typing {
-    /* overflow: hidden;
-    white-space: nowrap; */
+    text-align:center;
+    overflow: hidden;
+    white-space: nowrap;
     /* border-right: 2px solid; */
     animation: typing 3s linear;
 }

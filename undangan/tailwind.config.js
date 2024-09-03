@@ -9,17 +9,22 @@ module.exports = {
     extend: {
       backgroundImage: {
         'bg-m': "url('/images/Background.gif')",
+        'bg-platen':"url('/images/platen.gif')",
         'aw' :"url('/images/bg-0.gif')",
+        'start':"url('/images/start.png')",
+        'bg-1':"url('/images/bg-1.gif')"
       },
       backgroundSize: {
         '108%':'108%',
         '100%' : '100%',
         '150%':'150%',
-        'hv':'auto 100%'
+        'hv':'auto 100%',
+        'vw':'100vw'
       },
       colors: {
         'turqu':"#2a7060",
-        'turqu-prime':'#3baca3'
+        'turqu-prime':'#3baca3',
+        'text1':'#f4d390'
       },
       animationDelay: {
         '1s': '1s',
@@ -37,6 +42,8 @@ module.exports = {
         'masjid-lg':'masjid-lg 1s linear',
         'masjid-b' :'masjid-b 1s linear',
         'masjid-lg-b':'masjid-lg-b 1s linear',
+        'bintang-show' : 'bintang-show 3s ease-in-out',
+        'bintang-hidd' : 'bintang-hidd 3s ease-in-out'
       },
       keyframes: {
         zoo: {
@@ -74,6 +81,14 @@ module.exports = {
         'masjid-lg-b':{
           '100%':{transform: 'scaleY(1)',opacity :'1',transform: 'translateY(0rem)'},
           '0%':{transform: 'scaleY(0)',opacity:'0',transform: 'translateY(16rem)'}
+        },
+        'bintang-show':{
+            '0%':{transform:'translateY(-2rem)',opacity:'0'},
+          '100%':{transform:'translateY(0rem)',opacity:'1'}
+        },
+        'bintang-hidd':{
+            '0%':{transform:'translateY(2rem)',opacity:'0'},
+          '100%':{transform:'translateY(0rem)',opacity:'1'}
         }
       },
       gridTemplateColumns:{
@@ -81,10 +96,15 @@ module.exports = {
       },
       gridRow:{
         'satu':'1',
+        'dua':'2'
       },
       gridColumn:{
         'del':'8',
         'pat':'4'
+      },
+      height:{
+        'h-screen-90':'90vh',
+        'h-screen-80':'80vh'
       }
     },
   },
