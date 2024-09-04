@@ -12,7 +12,7 @@ router.get('/kepada/:kepada',(req,res,next)=>{
         teks6 : `27 Oktober 2024M - 24 Rabiul Akhir 1446H`,
         teks7 :`مجلس التعليم<br />الأخوة دار المصطفى`,
     }
-    res.render('adm',{layout:'layouts/main-layout', title:'Undangan Maulid Al-Ukhuwwah Daarul Musthofa',nama:req.params.kepada.toUpperCase(),dataProperti})
+    res.render('adm',{layout:'layouts/main-layout', title:'Undangan Maulid Al-Ukhuwwah Daarul Musthofa',nama:req.params.kepada.toUpperCase(),dataProperti,tanggal:'2024-10-27T06:00:00'})
 });
 
 module.exports = router;

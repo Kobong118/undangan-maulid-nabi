@@ -39,8 +39,11 @@
         </div>
     </div>
 </section>
+<!-- badan -->
 <section class="text-turqu-prime">
+    <!-- frame badan -->
     <div class="h-screen grid grid-cols-stack bg-turqu-prime gap-1">
+        <!-- hero -->
         <div x-data="{visible:false}" x-intersect:enter="visible = true" x-intersect:leave="visible = false"
             class="hero hidden lg:block lg:row-satu lg:col-del lg:col-start-1 lg:col-end-9 ">
             <div x-show="visible" x-bind:class="{'animate-zoo ':visible}"
@@ -50,13 +53,13 @@
         </div>
         <!-- mobile -->
         <div id="badan"
-            class="lg:row-satu lg:col-pat lg:col-start-9 lg:col-end-13 w-full lg:max-h-screen lg:overflow-y-scroll">
+            class="lg:row-satu lg:col-pat lg:col-start-9 lg:col-end-13 w-full lg:max-h-screen lg:overflow-y-scroll scrollbar-none">
             <!-- post 1 -->
             <div x-data="{visible:false}" x-intersect:enter="visible = true" x-intersect:leave="visible = false"
-                class="h-screen w-screen lg:w-full">
+                class="h-screen w-screen lg:w-full overflow-hidden">
                 <!-- frem post 1 -->
                 <div x-show="visible" x-bind:class="{'animate-zoo2 ':visible}"
-                    class="h-full w-full bg-bg-m bg-108% lg:bg-hv bg-center lg:animate-zhv grid grid-cols-stack relative m-1 rounded-md">
+                    class="h-full w-full bg-bg-m bg-108% lg:bg-hv bg-center lg:animate-zhv grid grid-cols-stack relative m-1 rounded-lg">
                     <!-- gambar masjid -->
                     <div :class="{'animate-bintang-hidd':visible}"
                         class="col-span-full row-satu z-10 bg-bg-1 bg-100% bg-bottom bg-no-repeat">
@@ -83,25 +86,32 @@
             <div x-data="{visible:false}" x-intersect:enter="visible = true" x-intersect:leave="visible = false">
                 <!-- frem post 2 -->
                 <div x-show="visible" x-bind:class="{'animate-zoo2':visible}"
-                    class="h-screen bg-bg-m bg-108% lg:bg-hv bg-center lg:animate-zhv">
+                    class="h-screen bg-bg-m bg-108% lg:bg-hv bg-center lg:animate-zhv m-1 rounded-lg overflow-hidden w-screen lg:w-full">
                     <!-- canvas -->
-                     <div class="grid grid-cols-stack w-full h-full ">
+                    <div class="grid grid-cols-stack w-full h-full ">
                         <!-- decorasi -->
-                         <div class="col-span-full h-full row-satu d-tr bg-d-tr bg-100% bg-right-top bg-no-repeat"></div>
-                         <div class="col-span-full h-full row-satu d-tl bg-d-tl bg-100% bg-left-top bg-no-repeat"></div>
-                         <div class="col-span-full h-full row-satu d-br bg-d-br bg-100% bg-right-bottom bg-no-repeat"></div>
-                         <div class="col-span-full h-full row-satu d-bl bg-d-bl bg-100% bg-left-bottom bg-no-repeat"></div>
-                         <!-- tekst -->
-                          <div class="col-span-full row-satu max-h-48 text-base text-center mt-36 lg:mt-28 mx-6 lg:mx-3">
+                        <div class="col-span-full h-full row-satu d-tr bg-d-tr bg-100% bg-right-top bg-no-repeat"></div>
+                        <div class="col-span-full h-full row-satu d-tl bg-d-tl bg-100% bg-left-top bg-no-repeat"></div>
+                        <div class="col-span-full h-full row-satu d-br bg-d-br bg-100% bg-right-bottom bg-no-repeat">
+                        </div>
+                        <div class="col-span-full h-full row-satu d-bl bg-d-bl bg-100% bg-left-bottom bg-no-repeat">
+                        </div>
+                        <!-- tekst -->
+                        <div x-bind:class="{'animate-bintang-show':visible}"
+                            class="col-span-full row-satu max-h-48 text-base text-center mt-36 lg:mt-28 mx-6 lg:mx-3">
                             <div class="w-fit mx-auto font-amiri text-2xl">
                                 <h1>السلام عليكم ورحمة الله وبركاته</h1>
                             </div>
                             <div class="w-fit mx-auto text-base">
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat suscipit accusantium ea, distinctio, maiores aut corporis nisi dolore nesciunt vero accusamus, atque nemo reiciendis. Earum autem qui architecto quo nesciunt.
-                                Inventore incidunt nulla assumenda soluta provident aliquam eaque expedita libero! Quae tempora distinctio deserunt suscipit asperiores esse enim illum quasi sint provident quas obcaecati ea, rerum, magnam dolores quidem sed!</p>
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat suscipit accusantium
+                                    ea, distinctio, maiores aut corporis nisi dolore nesciunt vero accusamus, atque nemo
+                                    reiciendis. Earum autem qui architecto quo nesciunt.
+                                    Inventore incidunt nulla assumenda soluta provident aliquam eaque expedita libero!
+                                    Quae tempora distinctio deserunt suscipit asperiores esse enim illum quasi sint
+                                    provident quas obcaecati ea, rerum, magnam dolores quidem sed!</p>
                             </div>
                             <!-- ttd -->
-                             <div class="flex justify-between content-center text-sm mt-10">
+                            <div class="flex justify-between content-center text-sm mt-10">
                                 <div>
                                     <strong>Aparat Setempat:</strong>
                                     <br>
@@ -120,9 +130,39 @@
                                     <br>
                                     <strong class="border border-t-black">Abuya Ahid</strong>
                                 </div>
-                             </div>
-                          </div>
-                     </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- screen 3 -->
+            <div x-data="{lihat:false}" x-intersect:enter="lihat = true" x-intersect:leave="lihat = false"
+                class=" h-screen w-screen lg:w-full overflow-hidden">
+                <!-- frame post 3 -->
+                <div x-show="lihat" x-bind:class="{'animate-zoo2':lihat}"
+                    class="h-screen m-1 rounded-lg bg-bg-m bg-108% lg:bg-hv bg-center lg:animate-zhv">
+                    <!-- count down -->
+                    <div class="grid grid-cols-stack w-screen lg:w-full">
+                        <!-- decor -->
+                        <div class="row-satu col-span-full">
+                            <div class="flex justify-between content-center">
+                                <div class="w-fit">
+                                    <img src="/images/d-c.png" alt="circle" class="w-20 lg:w-40">
+                                </div>
+                                <div class="w-fit">
+                                    <img src="/images/d-c.png" alt="circle" class="w-20 lg:w-40">
+                                </div>
+                            </div>
+                        </div>
+                        <!-- frame count down -->
+                        <div class="row-satu col-span-full m-4 h-20 lg:h-40">
+                            <!-- count down -->
+                            <div id="days">00</div> Days
+                            <div id="hours">00</div> Hours
+                            <div id="minutes">00</div> Minutes
+                            <div id="seconds">00</div> Seconds
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -130,3 +170,33 @@
 
     </div>
 </section>
+
+
+<script>
+     const targetDate = new Date("<%= tanggal %>");
+        function updateCountdown() {
+            const now = new Date();
+            const timeDifference = targetDate - now;
+
+            if (timeDifference <= 0) {
+                document.getElementById('days').textContent = '00';
+                document.getElementById('hours').textContent = '00';
+                document.getElementById('minutes').textContent = '00';
+                document.getElementById('seconds').textContent = '00';
+                return;
+            }
+
+            const days = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((timeDifference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((timeDifference % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((timeDifference % (1000 * 60)) / 1000);
+
+            document.getElementById('days').textContent = String(days).padStart(2, '0');
+            document.getElementById('hours').textContent = String(hours).padStart(2, '0');
+            document.getElementById('minutes').textContent = String(minutes).padStart(2, '0');
+            document.getElementById('seconds').textContent = String(seconds).padStart(2, '0');
+        }
+
+        setInterval(updateCountdown, 1000);
+        updateCountdown(); // Initialize countdown immediately
+    </script>

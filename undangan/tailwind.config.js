@@ -138,7 +138,15 @@ module.exports = {
       space:{
         '30rem':'30rem'
       },
-
+      scrollbar: {
+        none: {
+          '-ms-overflow-style': 'none', /* IE and Edge */
+          'scrollbar-width': 'none', /* Firefox */
+          '&::-webkit-scrollbar': {
+            display: 'none', /* Chrome, Safari, and Edge */
+          },
+        },
+      },
     },
   },
   plugins: [
@@ -157,6 +165,17 @@ module.exports = {
         };
       });
       addUtilities(utilities);
-    }
+    },
+    function({ addUtilities }) {
+      addUtilities({
+        '.scrollbar-none': {
+          '-ms-overflow-style': 'none', /* IE and Edge */
+          'scrollbar-width': 'none', /* Firefox */
+          '&::-webkit-scrollbar': {
+            display: 'none', /* Chrome, Safari, and Edge */
+          },
+        },
+      });
+    },
   ],
 }
