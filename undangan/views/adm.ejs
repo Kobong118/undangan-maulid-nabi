@@ -147,20 +147,23 @@
                         <div class="row-satu col-span-full">
                             <div class="flex justify-between content-center">
                                 <div class="w-fit">
-                                    <img src="/images/d-c.png" alt="circle" class="w-20 lg:w-40">
+                                    <img src="/images/d-c.png" alt="circle" class="w-20 lg:w-12">
                                 </div>
                                 <div class="w-fit">
-                                    <img src="/images/d-c.png" alt="circle" class="w-20 lg:w-40">
+                                    <img src="/images/d-c.png" alt="circle" class="w-20 lg:w-12">
                                 </div>
                             </div>
                         </div>
                         <!-- frame count down -->
                         <div class="row-satu col-span-full m-4 h-20 lg:h-40">
                             <!-- count down -->
-                            <div id="days">00</div> Days
-                            <div id="hours">00</div> Hours
-                            <div id="minutes">00</div> Minutes
-                            <div id="seconds">00</div> Seconds
+                            <div class=" flex justify-between items-center mx-14 bg-white border border-black rounded-lg shadow-lg shadow-black p-10">
+                                <div id="days" class="rounded-full border border-black p-1">00</div> Hari
+                                <div id="hours" class="rounded-full border border-black p-1">00</div> Jam
+                                <div id="minutes" class="rounded-full border border-black p-1">00</div> Menit
+                                <div id="seconds" class="rounded-full border border-black p-1">00</div> Detik
+                            </div>
+
                         </div>
                     </div>
                 </div>
@@ -173,30 +176,30 @@
 
 
 <script>
-     const targetDate = new Date("<%= tanggal %>");
-        function updateCountdown() {
-            const now = new Date();
-            const timeDifference = targetDate - now;
+    const targetDate = new Date("<%= tanggal %>");
+    function updateCountdown() {
+        const now = new Date();
+        const timeDifference = targetDate - now;
 
-            if (timeDifference <= 0) {
-                document.getElementById('days').textContent = '00';
-                document.getElementById('hours').textContent = '00';
-                document.getElementById('minutes').textContent = '00';
-                document.getElementById('seconds').textContent = '00';
-                return;
-            }
-
-            const days = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
-            const hours = Math.floor((timeDifference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            const minutes = Math.floor((timeDifference % (1000 * 60 * 60)) / (1000 * 60));
-            const seconds = Math.floor((timeDifference % (1000 * 60)) / 1000);
-
-            document.getElementById('days').textContent = String(days).padStart(2, '0');
-            document.getElementById('hours').textContent = String(hours).padStart(2, '0');
-            document.getElementById('minutes').textContent = String(minutes).padStart(2, '0');
-            document.getElementById('seconds').textContent = String(seconds).padStart(2, '0');
+        if (timeDifference <= 0) {
+            document.getElementById('days').textContent = '00';
+            document.getElementById('hours').textContent = '00';
+            document.getElementById('minutes').textContent = '00';
+            document.getElementById('seconds').textContent = '00';
+            return;
         }
 
-        setInterval(updateCountdown, 1000);
-        updateCountdown(); // Initialize countdown immediately
-    </script>
+        const days = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((timeDifference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((timeDifference % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((timeDifference % (1000 * 60)) / 1000);
+
+        document.getElementById('days').textContent = String(days).padStart(2, '0');
+        document.getElementById('hours').textContent = String(hours).padStart(2, '0');
+        document.getElementById('minutes').textContent = String(minutes).padStart(2, '0');
+        document.getElementById('seconds').textContent = String(seconds).padStart(2, '0');
+    }
+
+    setInterval(updateCountdown, 1000);
+    updateCountdown(); // Initialize countdown immediately
+</script>
