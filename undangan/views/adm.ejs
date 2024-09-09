@@ -2,13 +2,13 @@
     class="w-screen h-screen bg-bg-m bg-108% lg:bg-100% bg-center font-sofia animate-zoo2 delay-1s lg:animate-zoo text-turqu-prime">
     <div class="grid grid-cols-stack w-full h-full overflow-hidden">
         <div class="row-satu col-span-full flex relative ms-auto me-auto flex-col items-center backdrop-filter  font-Rundkursiv">
-            <h1 class="text-5xl font-kufi mt-24 lg:mt-8  drop-shadow-lg shadow-black"><%- dataProperti.teks1 %></h1>
-            <h6 class="text-xl mt-4"><%- dataProperti.teks2 %></h6>
+            <h1 class="text-5xl font-kufi mt-24 lg:mt-8  drop-shadow-lg shadow-black"><%- textsContents[0].textContent %></h1>
+            <h6 class="text-xl mt-4"><%- textsContents[1].textContent %></h6>
             <div class="logo mt-8 mb-8">
                 <img class="lg:w-80 w-40 animate-logo" src="/images/Logo.gif" alt="Al-Ukhuwwah Daarul Musthofa">
             </div>
             <div class="kepada flex flex-col items-center">
-                <h6 class="text-xl"><%- dataProperti.teks3 %></h6>
+                <h6 class="text-xl"><%- textsContents[2].textContent %></h6>
                 <h5 class="text-2xl font-zilla">
                     <% if (nama!="" ) { %>
                         <%= nama %>
@@ -22,7 +22,7 @@
                             <path
                                 d="M8.47 1.318a1 1 0 0 0-.94 0l-6 3.2A1 1 0 0 0 1 5.4v.817l5.75 3.45L8 8.917l1.25.75L15 6.217V5.4a1 1 0 0 0-.53-.882zM15 7.383l-4.778 2.867L15 13.117zm-.035 6.88L8 10.082l-6.965 4.18A1 1 0 0 0 2 15h12a1 1 0 0 0 .965-.738ZM1 13.116l4.778-2.867L1 7.383v5.734ZM7.059.435a2 2 0 0 1 1.882 0l6 3.2A2 2 0 0 1 16 5.4V14a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V5.4a2 2 0 0 1 1.059-1.765z" />
                         </svg></span>
-                    <%= dataProperti.teks4 %>
+                    <%= textsContents[3].textContent %>
                 </a>
             </div>
         </div>
@@ -42,10 +42,9 @@
 <!-- badan -->
 <section class="text-turqu-prime w-screen h-screen">
             <!-- post 1 -->
-            <div id="badan" x-data="{visible:false}" x-intersect:enter="visible = true" x-intersect:leave="visible = false" class="h-screen w-screen lg:w-full overflow-hidden">
+            <div id="badan" x-data="{visible:false}" x-intersect:enter="visible = true" x-intersect:leave="visible = false" class="h-screen w-screen overflow-hidden">
                 <!-- frem post 1 -->
-                <div x-show="visible" x-bind:class="{'animate-zoo2 ':visible}"
-                    class="h-full w-full bg-bg-m bg-108% lg:bg-hv bg-center lg:animate-zhv grid grid-cols-stack relative m-1 rounded-lg">
+                <div x-show="visible" x-bind:class="{'animate-zoo2 ':visible}" class="h-full w-full bg-bg-m bg-108% lg:bg-100% bg-center lg:animate-zoo m-1 rounded-lg grid grid-cols-stack relative">
                     <!-- gambar masjid -->
                     <div :class="{'animate-bintang-hidd':visible}"
                         class="col-span-full row-satu z-10 bg-bg-1 bg-100% bg-bottom bg-no-repeat">
@@ -53,8 +52,9 @@
                     <!-- tulisan -->
                     <div :class="{'animate-bintang-show':visible}"
                         class="col-span-full row-satu font-sofia text-center">
-                        <h1 class="text-xl lg:text-base mt-10"><%- dataProperti.teks5 %></h1>
-                        <h4 class="text-base mt-2"><%- dataProperti.teks6 %></h4>
+                        <h1 class="text-xl lg:text-base mt-10"><%- textsContents[1].textContent %></h1>
+                        <h2 class="text-xl lg:text-base mt-10"><%- textsContents[4].textContent %></h1>
+                        <h4 class="text-base mt-2"><%- textsContents[5].textContent %></h4>
                         <div class="w-fit pt-1 mx-auto rounded-full mt-28 grid grid-cols-stack">
                             <div class="row-satu col-span-full">
                                 <img class="w-48 animate-spin-slow" src="/images/d-c.png"
@@ -69,10 +69,9 @@
                 </div>
             </div>
             <!-- screen2 -->
-            <div x-data="{visible:false}" x-intersect:enter="visible = true" x-intersect:leave="visible = false" class="h-screen w-screen lg:w-full overflow-hidden">
+            <div x-data="{visible:false}" x-intersect:enter="visible = true" x-intersect:leave="visible = false" class="h-screen w-screen overflow-hidden">
                 <!-- frem post 2 -->
-                <div x-show="visible" x-bind:class="{'animate-zoo2':visible}"
-                    class="h-screen bg-bg-m bg-108% lg:bg-hv bg-center lg:animate-zhv m-1 rounded-lg overflow-hidden w-screen lg:w-full">
+                <div x-show="visible" x-bind:class="{'animate-zoo2':visible}" class="h-full w-full bg-bg-m bg-108% lg:bg-100% bg-center lg:animate-zoo m-1 rounded-lg overflow-hidden">
                     <!-- canvas -->
                     <div class="grid grid-cols-stack w-full h-full ">
                         <!-- decorasi -->
@@ -122,10 +121,9 @@
                 </div>
             </div>
             <!-- screen 3 -->
-            <div x-data="{lihat:false}" x-intersect:enter="lihat = true" x-intersect:leave="lihat = false" class=" h-screen w-screen lg:w-full overflow-hidden">
+            <div x-data="{lihat:false}" x-intersect:enter="lihat = true" x-intersect:leave="lihat = false" class=" h-screen w-screen overflow-hidden">
                 <!-- frame post 3 -->
-                <div x-show="lihat" x-bind:class="{'animate-zoo2':lihat}"
-                    class="h-screen m-1 rounded-lg bg-bg-m bg-108% lg:bg-hv bg-center lg:animate-zhv">
+                <div x-show="lihat" x-bind:class="{'animate-zoo':2lihat}" class="h-full w-full bg-bg-m bg-108% lg:bg-100% bg-center lg:animate-zoo m-1 rounded-lg">
                     <!-- count down -->
                     <div class="grid grid-cols-stack w-screen lg:w-full">
                         <!-- decor -->

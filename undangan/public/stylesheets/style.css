@@ -663,10 +663,6 @@ video {
   display: grid;
 }
 
-.hidden {
-  display: none;
-}
-
 .h-20 {
   height: 5rem;
 }
@@ -822,20 +818,6 @@ video {
   animation: spin 6s linear infinite;
 }
 
-@keyframes zoo {
-  0% {
-    background-size: 150%;
-  }
-
-  100% {
-    background-size: 100%;
-  }
-}
-
-.animate-zoo {
-  animation: zoo 3s;
-}
-
 @keyframes zoo2 {
   0% {
     background-size: 150%;
@@ -848,6 +830,20 @@ video {
 
 .animate-zoo2 {
   animation: zoo2 3s;
+}
+
+@keyframes zoo {
+  0% {
+    background-size: 150%;
+  }
+
+  100% {
+    background-size: 100%;
+  }
+}
+
+.animate-zoo {
+  animation: zoo 3s;
 }
 
 .grid-cols-stack {
@@ -872,10 +868,6 @@ video {
 
 .justify-between {
   justify-content: space-between;
-}
-
-.gap-1 {
-  gap: 0.25rem;
 }
 
 .overflow-hidden {
@@ -910,11 +902,6 @@ video {
 .border-t-black {
   --tw-border-opacity: 1;
   border-top-color: rgb(0 0 0 / var(--tw-border-opacity));
-}
-
-.bg-turqu-prime {
-  --tw-bg-opacity: 1;
-  background-color: rgb(59 172 163 / var(--tw-bg-opacity));
 }
 
 .bg-white {
@@ -1083,15 +1070,6 @@ video {
   animation-delay: 1s;
 }
 
-.scrollbar-none {
-  -ms-overflow-style: none;
-  scrollbar-width: none;
-}
-
-.scrollbar-none::-webkit-scrollbar {
-  display: none;
-}
-
 @font-face {
   font-family: "kufi";
 
@@ -1143,38 +1121,6 @@ video {
 }
 
 @media (min-width: 1024px) {
-  .lg\:col-del {
-    grid-column: 8;
-  }
-
-  .lg\:col-pat {
-    grid-column: 4;
-  }
-
-  .lg\:col-sem {
-    grid-column: 9;
-  }
-
-  .lg\:col-start-1 {
-    grid-column-start: 1;
-  }
-
-  .lg\:col-start-9 {
-    grid-column-start: 9;
-  }
-
-  .lg\:col-end-13 {
-    grid-column-end: 13;
-  }
-
-  .lg\:col-end-9 {
-    grid-column-end: 9;
-  }
-
-  .lg\:row-satu {
-    grid-row: 1;
-  }
-
   .lg\:mx-3 {
     margin-left: 0.75rem;
     margin-right: 0.75rem;
@@ -1192,16 +1138,8 @@ video {
     margin-top: 2rem;
   }
 
-  .lg\:block {
-    display: block;
-  }
-
   .lg\:h-40 {
     height: 10rem;
-  }
-
-  .lg\:max-h-screen {
-    max-height: 100vh;
   }
 
   .lg\:w-12 {
@@ -1248,8 +1186,18 @@ video {
     animation: zoo 3s;
   }
 
-  .lg\:overflow-y-scroll {
-    overflow-y: scroll;
+  @keyframes zhv2 {
+    0% {
+      background-size: auto 150%;
+    }
+
+    100% {
+      background-size:  auto 108%;
+    }
+  }
+
+  .lg\:animate-zhv2 {
+    animation: zhv2 3s;
   }
 
   .lg\:bg-100\% {
@@ -1258,6 +1206,10 @@ video {
 
   .lg\:bg-hv {
     background-size: auto 100%;
+  }
+
+  .lg\:bg-cover {
+    background-size: cover;
   }
 
   .lg\:text-base {
