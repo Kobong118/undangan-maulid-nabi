@@ -8,7 +8,7 @@ router.get('/',(req,res,next)=>{
 router.get('/:kepada',(req,res,next)=>{
     const dataProperti = {
         teks1 : 'مولد النبي المصطفى',
-        teks2 :'Undangan Maulid Nabi',
+        teks2 :'Undangan Maulid Akbar',
         logoSrc : '',
         teks3 : 'Kepada :',
         teks4 :' Buka Undangan',

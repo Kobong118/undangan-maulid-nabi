@@ -12,8 +12,16 @@
   src: url("/fonts/ZillaSlab-Medium.ttf");
 }
 @font-face {
-  font-family: "Amiri Quran", serif;
-  srs : url("/fonts/AmiriQuran-Regular.ttf");
+  font-family: "Amiri Quran";
+  src : url("/fonts/AmiriQuran-Regular.ttf");
+}
+@font-face {
+  font-family: "Rundkursiv";
+  src : url("/fonts/Rundkursiv.ttf");
+}
+@font-face {
+  font-family: "Sofia";
+  src : url("/fonts/Sofia-Regular.ttf");
 }
 @keyframes typing {
   from { width: 0; }

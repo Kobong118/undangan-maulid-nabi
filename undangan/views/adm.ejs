@@ -1,7 +1,7 @@
 <section id="header"
-    class="w-screen h-screen bg-bg-m bg-108% lg:bg-100% bg-center font-zilla animate-zoo2 delay-1s lg:animate-zoo text-turqu-prime">
+    class="w-screen h-screen bg-bg-m bg-108% lg:bg-100% bg-center font-sofia animate-zoo2 delay-1s lg:animate-zoo text-turqu-prime">
     <div class="grid grid-cols-stack w-full h-full overflow-hidden">
-        <div class="row-satu col-span-full flex relative ms-auto me-auto flex-col items-center backdrop-filter">
+        <div class="row-satu col-span-full flex relative ms-auto me-auto flex-col items-center backdrop-filter  font-Rundkursiv">
             <h1 class="text-5xl font-kufi mt-24 lg:mt-8  drop-shadow-lg shadow-black"><%- dataProperti.teks1 %></h1>
             <h6 class="text-xl mt-4"><%- dataProperti.teks2 %></h6>
             <div class="logo mt-8 mb-8">
@@ -9,7 +9,7 @@
             </div>
             <div class="kepada flex flex-col items-center">
                 <h6 class="text-xl"><%- dataProperti.teks3 %></h6>
-                <h5 class="text-2xl">
+                <h5 class="text-2xl font-zilla">
                     <% if (nama!="" ) { %>
                         <%= nama %>
                             <% } %>
@@ -40,12 +40,12 @@
     </div>
 </section>
 <!-- badan -->
-<section class="text-turqu-prime">
+<section class="text-turqu-prime w-screen h-screen">
     <!-- frame badan -->
     <div class="h-screen grid grid-cols-stack bg-turqu-prime gap-1">
         <!-- hero -->
         <div x-data="{visible:false}" x-intersect:enter="visible = true" x-intersect:leave="visible = false"
-            class="hero hidden lg:block lg:row-satu lg:col-del lg:col-start-1 lg:col-end-9 ">
+            class="lg:row-satu lg:col-del lg:col-start-1 lg:col-end-9 ">
             <div x-show="visible" x-bind:class="{'animate-zoo ':visible}"
                 class="rounded bg-bg-m bg-100% bg-center w-full h-full m-1">
 
@@ -55,8 +55,7 @@
         <div id="badan"
             class="lg:row-satu lg:col-pat lg:col-start-9 lg:col-end-13 w-full lg:max-h-screen lg:overflow-y-scroll scrollbar-none">
             <!-- post 1 -->
-            <div x-data="{visible:false}" x-intersect:enter="visible = true" x-intersect:leave="visible = false"
-                class="h-screen w-screen lg:w-full overflow-hidden">
+            <div x-data="{visible:false}" x-intersect:enter="visible = true" x-intersect:leave="visible = false" class="h-screen w-screen lg:w-full overflow-hidden">
                 <!-- frem post 1 -->
                 <div x-show="visible" x-bind:class="{'animate-zoo2 ':visible}"
                     class="h-full w-full bg-bg-m bg-108% lg:bg-hv bg-center lg:animate-zhv grid grid-cols-stack relative m-1 rounded-lg">
@@ -66,7 +65,7 @@
                     </div>
                     <!-- tulisan -->
                     <div :class="{'animate-bintang-show':visible}"
-                        class="col-span-full row-satu font-zilla text-center">
+                        class="col-span-full row-satu font-sofia text-center">
                         <h1 class="text-xl lg:text-base mt-10"><%- dataProperti.teks5 %></h1>
                         <h4 class="text-base mt-2"><%- dataProperti.teks6 %></h4>
                         <div class="w-fit pt-1 mx-auto rounded-full mt-28 grid grid-cols-stack">
@@ -83,7 +82,7 @@
                 </div>
             </div>
             <!-- screen2 -->
-            <div x-data="{visible:false}" x-intersect:enter="visible = true" x-intersect:leave="visible = false">
+            <div x-data="{visible:false}" x-intersect:enter="visible = true" x-intersect:leave="visible = false" class="h-screen w-screen lg:w-full overflow-hidden">
                 <!-- frem post 2 -->
                 <div x-show="visible" x-bind:class="{'animate-zoo2':visible}"
                     class="h-screen bg-bg-m bg-108% lg:bg-hv bg-center lg:animate-zhv m-1 rounded-lg overflow-hidden w-screen lg:w-full">
@@ -136,8 +135,7 @@
                 </div>
             </div>
             <!-- screen 3 -->
-            <div x-data="{lihat:false}" x-intersect:enter="lihat = true" x-intersect:leave="lihat = false"
-                class=" h-screen w-screen lg:w-full overflow-hidden">
+            <div x-data="{lihat:false}" x-intersect:enter="lihat = true" x-intersect:leave="lihat = false" class=" h-screen w-screen lg:w-full overflow-hidden">
                 <!-- frame post 3 -->
                 <div x-show="lihat" x-bind:class="{'animate-zoo2':lihat}"
                     class="h-screen m-1 rounded-lg bg-bg-m bg-108% lg:bg-hv bg-center lg:animate-zhv">

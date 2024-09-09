@@ -5,7 +5,9 @@ module.exports = {
     fontFamily: {
       kufi: ["kufi", "sans-serif"],
       zilla:["Zilla Slab", "system-ui"],
-      amiri:["Amiri Quran","serif"]
+      amiri:["Amiri Quran","serif"],
+      sofia:["Sofia", "system-ui"],
+      Rundkursiv:["Rundkursiv","system-ui"]
     },
     extend: {
       backgroundImage: {
@@ -128,8 +130,9 @@ module.exports = {
         'dua':'2'
       },
       gridColumn:{
+        'pat':'4',
         'del':'8',
-        'pat':'4'
+        'sem':'9'
       },
       height:{
         'h-screen-90':'90vh',
