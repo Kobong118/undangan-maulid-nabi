@@ -5,7 +5,7 @@
             <h1 class="text-5xl font-kufi mt-24 lg:mt-8  drop-shadow-lg shadow-black"><%- dataProperti.teks1 %></h1>
             <h6 class="text-xl mt-4"><%- dataProperti.teks2 %></h6>
             <div class="logo mt-8 mb-8">
-                <img class="lg:w-80 w-40 animate-logo" src="/images/logo.gif" alt="Al-Ukhuwwah Daarul Musthofa">
+                <img class="lg:w-80 w-40 animate-logo" src="/images/Logo.gif" alt="Al-Ukhuwwah Daarul Musthofa">
             </div>
             <div class="kepada flex flex-col items-center">
                 <h6 class="text-xl"><%- dataProperti.teks3 %></h6>
@@ -41,21 +41,8 @@
 </section>
 <!-- badan -->
 <section class="text-turqu-prime w-screen h-screen">
-    <!-- frame badan -->
-    <div class="h-screen grid grid-cols-stack bg-turqu-prime gap-1">
-        <!-- hero -->
-        <div x-data="{visible:false}" x-intersect:enter="visible = true" x-intersect:leave="visible = false"
-            class="lg:row-satu lg:col-del lg:col-start-1 lg:col-end-9 ">
-            <div x-show="visible" x-bind:class="{'animate-zoo ':visible}"
-                class="rounded bg-bg-m bg-100% bg-center w-full h-full m-1">
-
-            </div>
-        </div>
-        <!-- mobile -->
-        <div id="badan"
-            class="lg:row-satu lg:col-pat lg:col-start-9 lg:col-end-13 w-full lg:max-h-screen lg:overflow-y-scroll scrollbar-none">
             <!-- post 1 -->
-            <div x-data="{visible:false}" x-intersect:enter="visible = true" x-intersect:leave="visible = false" class="h-screen w-screen lg:w-full overflow-hidden">
+            <div id="badan" x-data="{visible:false}" x-intersect:enter="visible = true" x-intersect:leave="visible = false" class="h-screen w-screen lg:w-full overflow-hidden">
                 <!-- frem post 1 -->
                 <div x-show="visible" x-bind:class="{'animate-zoo2 ':visible}"
                     class="h-full w-full bg-bg-m bg-108% lg:bg-hv bg-center lg:animate-zhv grid grid-cols-stack relative m-1 rounded-lg">
@@ -166,10 +153,7 @@
                     </div>
                 </div>
             </div>
-        </div>
-
-
-    </div>
+        
 </section>
 
 
