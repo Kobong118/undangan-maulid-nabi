@@ -1,6 +1,7 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ["./views/**/*.{html,ejs,js}"],
+  content: ["./views/**/*.{html,ejs,js}",
+    './public/**/*.js',],
   theme: {
     fontFamily: {
       kufi: ["kufi", "sans-serif"],
@@ -22,11 +23,18 @@ module.exports = {
         'd-tl':"url('/images/d-tl.png')",
         'd-c':"url('/images/d-c.png')",
         'd-cr':"url('/images/d-cr.png')",
-        'd-cl':"url('/images/d-cl.png')"
+        'd-cl':"url('/images/d-cl.png')",
+        'panitia':"url('/images/panitia.png')",
+        'd-d':"url('/images/d-d.png')",
+        'd-l1':"url('/images/d-l1.png')",
+        'd-l2':"url('/images/d-l2.png')"
       },
       backgroundSize: {
+        '20%':'20%',
+        '50%':'50%',
         '108%':'108%',
         '100%' : '100%',
+        '100-100' : '50% 100%',
         '150%':'150%',
         'hv':'auto 100%',
         'vw':'100vw',

@@ -1,8 +1,10 @@
 <section id="header"
     class="w-screen h-screen bg-bg-m bg-108% lg:bg-100% bg-center font-sofia animate-zoo2 delay-1s lg:animate-zoo text-turqu-prime">
     <div class="grid grid-cols-stack w-full h-full overflow-hidden">
-        <div class="row-satu col-span-full flex relative ms-auto me-auto flex-col items-center backdrop-filter  font-Rundkursiv">
-            <h1 class="text-5xl font-kufi mt-24 lg:mt-8  drop-shadow-lg shadow-black"><%- textsContents[0].textContent %></h1>
+        <div
+            class="row-satu col-span-full flex relative ms-auto me-auto flex-col items-center backdrop-filter  font-Rundkursiv">
+            <h1 class="text-5xl font-kufi mt-24 lg:mt-8  drop-shadow-lg shadow-black"><%- textsContents[0].textContent
+                    %></h1>
             <h6 class="text-xl mt-4"><%- textsContents[1].textContent %></h6>
             <div class="logo mt-8 mb-8">
                 <img class="lg:w-80 w-40 animate-logo" src="/images/Logo.gif" alt="Al-Ukhuwwah Daarul Musthofa">
@@ -10,9 +12,7 @@
             <div class="kepada flex flex-col items-center">
                 <h6 class="text-xl"><%- textsContents[2].textContent %></h6>
                 <h5 class="text-2xl font-zilla">
-                    <% if (nama!="" ) { %>
-                        <%= nama %>
-                            <% } %>
+                    <%= nama.toUpperCase() %>
                 </h5>
             </div>
             <div class="buka mt-14 lg:mt-3 text-xl animate-bounce">
@@ -41,21 +41,29 @@
 </section>
 <!-- badan -->
 <section class="text-turqu-prime w-screen h-screen">
-            <!-- post 1 -->
-            <div id="badan" x-data="{visible:false}" x-intersect:enter="visible = true" x-intersect:leave="visible = false" class="h-screen w-screen overflow-hidden">
-                <!-- frem post 1 -->
-                <div x-show="visible" x-bind:class="{'animate-zoo2 ':visible}" class="h-full w-full bg-bg-m bg-108% lg:bg-100% bg-center lg:animate-zoo m-1 rounded-lg grid grid-cols-stack relative">
-                    <!-- gambar masjid -->
-                    <div :class="{'animate-bintang-hidd':visible}"
-                        class="col-span-full row-satu z-10 bg-bg-1 bg-100% bg-bottom bg-no-repeat">
-                    </div>
-                    <!-- tulisan -->
-                    <div :class="{'animate-bintang-show':visible}"
-                        class="col-span-full row-satu font-sofia text-center">
-                        <h1 class="text-xl lg:text-base mt-10"><%- textsContents[1].textContent %></h1>
-                        <h2 class="text-xl lg:text-base mt-10"><%- textsContents[4].textContent %></h1>
+    <!-- post 1 -->
+    <div id="badan" x-data="{visible:false}" x-intersect:enter="visible = true" x-intersect:leave="visible = false"
+        class="h-screen w-screen overflow-hidden">
+        <!-- frem post 1 -->
+        <div x-show="visible" x-bind:class="{'animate-zoo2 ':visible}"
+            class="h-full w-full bg-bg-m bg-108% lg:bg-100% bg-center lg:animate-zoo m-1 rounded-lg grid grid-cols-stack relative">
+            <!-- gambar masjid -->
+            <div :class="{'animate-bintang-hidd':visible}"
+                class="col-span-full row-satu z-10 bg-bg-1 bg-100% bg-bottom bg-no-repeat">
+            </div>
+            <div :class="{'animate-bintang-show':visible}"
+                class="col-span-full row-satu z-10 bg-d-l1 bg-100% bg-top lg:bg-100-100 origin-top-left bg-no-repeat">
+            </div>
+            <div :class="{'animate-bintang-show':visible}"
+                class="col-span-full row-satu z-10 bg-d-l2 bg-100% bg-top lg:bg-100-100 origin-top-right bg-no-repeat">
+            </div>
+            <!-- tulisan -->
+            <div :class="{'animate-bintang-show':visible}" class="col-span-full row-satu text-center z-20">
+                <h1 class="text-2xl mt-10 font-Rundkursiv"><%- textsContents[1].textContent %></h1>
+                <h2 class="text-3xl mt-10 font-kufi"><%- textsContents[4].textContent %></h1>
                         <h4 class="text-base mt-2"><%- textsContents[5].textContent %></h4>
-                        <div class="w-fit pt-1 mx-auto rounded-full mt-28 grid grid-cols-stack">
+                        <p class="text-base mt-2 mx-10"><%- textsContents[6].textContent %></p>
+                        <div class="w-fit pt-1 mx-auto rounded-full mt-8 grid grid-cols-stack">
                             <div class="row-satu col-span-full">
                                 <img class="w-48 animate-spin-slow" src="/images/d-c.png"
                                     alt="Al-Ukhuwwah Daarul Musthofa">
@@ -65,121 +73,145 @@
                                 <img class="w-40" src="/images/logo3.png" alt="Al-Ukhuwwah Daarul Musthofa">
                             </div>
                         </div>
-                    </div>
-                </div>
+                        <h1
+                            class="text-lg lg:text-2xl mt-10 font-Rundkursiv outline bg-opacity-80 bg-d-d bg-top bg-100% p-4 rounded-full w-fit mx-auto">
+                            <%- textsContents[2].textContent %> <span>
+                                    <% if (nama=="muslimin" ) { %>
+                                        Seluruh Ummat Nabi Muhammad SAW
+                                        <% } else { %>
+                                            <%= nama %>
+                                                <% } %>
+                                </span>
+                        </h1>
             </div>
-            <!-- screen2 -->
-            <div x-data="{visible:false}" x-intersect:enter="visible = true" x-intersect:leave="visible = false" class="h-screen w-screen overflow-hidden">
-                <!-- frem post 2 -->
-                <div x-show="visible" x-bind:class="{'animate-zoo2':visible}" class="h-full w-full bg-bg-m bg-108% lg:bg-100% bg-center lg:animate-zoo m-1 rounded-lg overflow-hidden">
-                    <!-- canvas -->
-                    <div class="grid grid-cols-stack w-full h-full ">
-                        <!-- decorasi -->
-                        <div class="col-span-full h-full row-satu d-tr bg-d-tr bg-100% bg-right-top bg-no-repeat"></div>
-                        <div class="col-span-full h-full row-satu d-tl bg-d-tl bg-100% bg-left-top bg-no-repeat"></div>
-                        <div class="col-span-full h-full row-satu d-br bg-d-br bg-100% bg-right-bottom bg-no-repeat">
-                        </div>
-                        <div class="col-span-full h-full row-satu d-bl bg-d-bl bg-100% bg-left-bottom bg-no-repeat">
-                        </div>
-                        <!-- tekst -->
-                        <div x-bind:class="{'animate-bintang-show':visible}"
-                            class="col-span-full row-satu max-h-48 text-base text-center mt-36 lg:mt-28 mx-6 lg:mx-3">
-                            <div class="w-fit mx-auto font-amiri text-2xl">
-                                <h1>السلام عليكم ورحمة الله وبركاته</h1>
-                            </div>
-                            <div class="w-fit mx-auto text-base">
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat suscipit accusantium
-                                    ea, distinctio, maiores aut corporis nisi dolore nesciunt vero accusamus, atque nemo
-                                    reiciendis. Earum autem qui architecto quo nesciunt.
-                                    Inventore incidunt nulla assumenda soluta provident aliquam eaque expedita libero!
-                                    Quae tempora distinctio deserunt suscipit asperiores esse enim illum quasi sint
-                                    provident quas obcaecati ea, rerum, magnam dolores quidem sed!</p>
-                            </div>
-                            <!-- ttd -->
-                            <div class="flex justify-between content-center text-sm mt-10">
-                                <div>
-                                    <strong>Aparat Setempat:</strong>
-                                    <br>
-                                    <br>
-                                    <strong class="border border-t-black">Bpk Rete kadus</strong>
-                                </div>
-                                <div>
-                                    <strong>DKM Masjid:</strong>
-                                    <br>
-                                    <br>
-                                    <strong class="border border-t-black">Bpk Haji saha</strong>
-                                </div>
-                                <div>
-                                    <strong>Pengurus/Rois:</strong>
-                                    <br>
-                                    <br>
-                                    <strong class="border border-t-black">Abuya Ahid</strong>
-                                </div>
-                            </div>
+        </div>
+    </div>
+    <!-- screen2 -->
+    <div x-data="{visible:false}" x-intersect:enter="visible = true" x-intersect:leave="visible = false"
+        class="h-screen w-screen overflow-hidden">
+        <!-- frem post 2 -->
+        <div x-show="visible" x-bind:class="{'animate-zoo2':visible}"
+            class="h-full w-full bg-bg-m bg-108% lg:bg-100% bg-center lg:animate-zoo m-1 rounded-lg overflow-hidden">
+            <!-- canvas -->
+            <div class="grid grid-cols-stack w-full h-full overflow-y-scroll scrollbar-none">
+                <!-- decorasi -->
+                <div class="col-span-full h-full row-satu d-tr bg-d-tr bg-50% lg:bg-20% bg-right-top bg-no-repeat">
+                </div>
+                <div class="col-span-full h-full row-satu d-tl bg-d-tl bg-50% lg:bg-20% bg-left-top bg-no-repeat"></div>
+                <div class="col-span-full h-full row-satu d-br bg-d-br bg-50% lg:bg-20% bg-right-bottom bg-no-repeat">
+                </div>
+                <div class="col-span-full h-full row-satu d-bl bg-d-bl bg-50% lg:bg-20% bg-left-bottom bg-no-repeat">
+                </div>
+                <!-- tekst -->
+                <div x-bind:class="{'animate-bintang-show':visible}"
+                    class="col-span-full row-satu h-full text-base text-center py-16 mx-6 lg:mx-3">
+                    <div class="w-fit mx-auto font-amiri">
+                        <h1>بسم الله الرحمن الرحيم</h1>
+                        <h3>السلام عليكم ورحمة الله وبركاته</h3>
+                    </div>
+                    <div class="w-fit mx-10 mt-4 font-sofia">
+                        <p><%- textsContents[7].textContent %> <br> <br> Hari: <%- textsContents[8].textContent %> <br>
+                                    Tanggal: <%- textsContents[5].textContent %> <br> Tempat: Majlis Ta'lim Al-Ukhuwwah
+                                        Daarul Musthofa <br> <%- textsContents[6].textContent %> <br> <%-
+                                                textsContents[9].textContent %> <br> <span class="font-amiri"><%-
+                                                        textsContents[10].textContent %></span></p>
+                    </div>
+                    <div class="w-fit mx-auto my-4 font-Rundkursiv">
+                        <h1>Panitia</h1>
+                        <div
+                            class="rounded-lg bg-panitia bg-center bg-100% w-64 h-14 border border-turqu-prime shadow-lg shadow-turqu">
                         </div>
                     </div>
                 </div>
             </div>
-            <!-- screen 3 -->
-            <div x-data="{lihat:false}" x-intersect:enter="lihat = true" x-intersect:leave="lihat = false" class=" h-screen w-screen overflow-hidden">
-                <!-- frame post 3 -->
-                <div x-show="lihat" x-bind:class="{'animate-zoo':2lihat}" class="h-full w-full bg-bg-m bg-108% lg:bg-100% bg-center lg:animate-zoo m-1 rounded-lg">
-                    <!-- count down -->
-                    <div class="grid grid-cols-stack w-screen lg:w-full">
-                        <!-- decor -->
-                        <div class="row-satu col-span-full">
-                            <div class="flex justify-between content-center">
-                                <div class="w-fit">
-                                    <img src="/images/d-c.png" alt="circle" class="w-20 lg:w-12">
-                                </div>
-                                <div class="w-fit">
-                                    <img src="/images/d-c.png" alt="circle" class="w-20 lg:w-12">
-                                </div>
-                            </div>
-                        </div>
-                        <!-- frame count down -->
-                        <div class="row-satu col-span-full m-4 h-20 lg:h-40">
-                            <!-- count down -->
-                            <div class=" flex justify-between items-center mx-14 bg-white border border-black rounded-lg shadow-lg shadow-black p-10">
-                                <div id="days" class="rounded-full border border-black p-1">00</div> Hari
-                                <div id="hours" class="rounded-full border border-black p-1">00</div> Jam
-                                <div id="minutes" class="rounded-full border border-black p-1">00</div> Menit
-                                <div id="seconds" class="rounded-full border border-black p-1">00</div> Detik
-                            </div>
+        </div>
+    </div>
+    <!-- screen 3 -->
+    <div x-data="{lihat:false}" x-intersect:enter="lihat = true" x-intersect:leave="lihat = false"
+        class=" h-screen w-screen overflow-hidden">
+        <!-- frame post 3 -->
+        <div x-show="lihat" x-bind:class="{'animate-zoo2':lihat}"
+            class="h-full w-full bg-bg-m bg-108% lg:bg-100% bg-center lg:animate-zoo m-1 rounded-lg">
+            <!-- count down -->
+            <div
+                class="flex items-center justify-center max-h-fit border-b outline-8 outline rounded-xl bg-d-d bg-top bg-100%">
+                <div class="wrap text-center mt-10">
+                    <h1 class="text-4xl font-light mb-1">Hitungan Mundur <strong class="text-turqu">Menuju</strong></h1>
+                    <h3 class="text-2xl font-light mb-6"><strong class="text-turqu">Perayaan Maulid Nabi</strong>
+                        Muhammad SAW</h3>
+                    <div class="countdown grid grid-cols-4 gap-6">
 
+                        <!-- Days -->
+                        <div class="bloc-time days" data-init-value="00">
+                            <span class="count-title text-gray-700">Hari</span>
+                            <div class="figure text-5xl font-bold days-1">
+                                <span class="top">00</span>
+                                <span class="bottom">00</span>
+                            </div>
                         </div>
+
+                        <!-- Hours -->
+                        <div class="bloc-time hours" data-init-value="00">
+                            <span class="count-title text-gray-700">Jam</span>
+                            <div class="figure text-5xl font-bold hours-1">
+                                <span class="top">00</span>
+                                <span class="bottom">00</span>
+                            </div>
+                        </div>
+
+                        <!-- Minutes -->
+                        <div class="bloc-time minutes" data-init-value="00">
+                            <span class="count-title text-gray-700">Menit</span>
+                            <div class="figure text-5xl font-bold minutes-1">
+                                <span class="top">00</span>
+                                <span class="bottom">00</span>
+                            </div>
+                        </div>
+
+                        <!-- Seconds -->
+                        <div class="bloc-time seconds" data-init-value="00">
+                            <span class="count-title text-gray-700">Detik</span>
+                            <div class="figure text-5xl font-bold seconds-1">
+                                <span class="top">00</span>
+                                <span class="bottom">00</span>
+                            </div>
+                        </div>
+
                     </div>
                 </div>
             </div>
-        
+            <!-- susunan acara -->
+            <div class="w-full text-center mt-6 relative">
+                 <!-- acara 1 -->
+                 <h1 class="text-4xl font-light mb-1">Susunan<strong class="text-turqu"> Acara</strong></h1>
+                 <div class="mt-6">
+                    <h1 class="text-xl font-thin">Pengajian Bulanan Riyaadlul Jannah Desa Padasuka</h1>
+                     <div class="flex justify-between items-center">
+                         <div class="mx-3 font-light font-Rundkursiv">
+                             <h2 class=" mb-1 text-turqu">Ahad</h2>
+                             <h4 class=""><%- textsContents[5].textContent %></h4>
+                         </div>
+                         <!-- dekor -->
+                         <div class="">
+                             <img class="lg:w-80 w-40 animate-logo" src="/images/Logo.gif" alt="Al-Ukhuwwah Daarul Musthofa">
+                         </div>
+                         <!-- acaran 2 -->
+                         <div class="mx-3 font-light font-Rundkursiv">
+                             <h6 class="font-bold text-turqu">Khusus Akhwat</h6>
+                             <span class="block">Waktu: 07:00 (pagi-pagi) sampai Zhuhur</span>
+                             <span class="block">Tempat: Di dalam Madrasah</span>
+                         </div>
+                     </div>
+                     <div class="font-bold">
+                        <h1 class="text-xl">Muballighoh: Ustadzah Hj.Syifa Alawiyyah</h1>
+                        <h6>Puteri Abuya Prof.Dr.(H.C) KH Muhammad Muhyiddin Abdul qodir Al-Manafi</h6>
+                     </div>
+                 </div>
+             </div>
+        </div>
+    </div>
+
 </section>
 
 
-<script>
-    const targetDate = new Date("<%= tanggal %>");
-    function updateCountdown() {
-        const now = new Date();
-        const timeDifference = targetDate - now;
-
-        if (timeDifference <= 0) {
-            document.getElementById('days').textContent = '00';
-            document.getElementById('hours').textContent = '00';
-            document.getElementById('minutes').textContent = '00';
-            document.getElementById('seconds').textContent = '00';
-            return;
-        }
-
-        const days = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
-        const hours = Math.floor((timeDifference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-        const minutes = Math.floor((timeDifference % (1000 * 60 * 60)) / (1000 * 60));
-        const seconds = Math.floor((timeDifference % (1000 * 60)) / 1000);
-
-        document.getElementById('days').textContent = String(days).padStart(2, '0');
-        document.getElementById('hours').textContent = String(hours).padStart(2, '0');
-        document.getElementById('minutes').textContent = String(minutes).padStart(2, '0');
-        document.getElementById('seconds').textContent = String(seconds).padStart(2, '0');
-    }
-
-    setInterval(updateCountdown, 1000);
-    updateCountdown(); // Initialize countdown immediately
-</script>
+<script defer src="/javascripts/countDown.js"></script>
