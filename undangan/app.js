@@ -6,7 +6,6 @@ var logger = require('morgan');
 const expressLayouts = require('express-ejs-layouts');
 const favicon = require('serve-favicon');
 
-var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 const undanganAdm = require('./routes/adm')
 
@@ -26,9 +25,8 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(expressLayouts);
-app.use('/', indexRouter);
+app.use('/', undanganAdm);
 app.use('/users', usersRouter);
-app.use('/undangan-maulid-adm', undanganAdm);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
@@ -44,7 +42,7 @@ app.use(function(err, req, res, next) {
   // render the error page
   res.status(err.status || 500);
   res.render('error',
-    {layout:"layouts/main-layout"}
+    {layout:"layouts/main-layout",title:'error'}
   );
 });
 

@@ -1,5 +1,5 @@
 <section id="header"
-    class="w-screen h-screen bg-bg-m bg-108% lg:bg-100% bg-center font-sofia animate-zoo2 delay-1s lg:animate-zoo text-turqu-prime">
+    class="container h-screen bg-bg-m bg-108% lg:bg-100% bg-center font-sofia animate-zoo2 delay-1s lg:animate-zoo text-turqu-prime">
     <div class="grid grid-cols-stack w-full h-full overflow-hidden">
         <div
             class="row-satu col-span-full flex relative ms-auto me-auto flex-col items-center backdrop-filter  font-Rundkursiv">
@@ -43,7 +43,7 @@
 <section class="text-turqu-prime w-screen h-screen">
     <!-- post 1 -->
     <div id="badan" x-data="{visible:false}" x-intersect:enter="visible = true" x-intersect:leave="visible = false"
-        class="h-screen w-screen overflow-hidden">
+        class="h-screen container overflow-hidden">
         <!-- frem post 1 -->
         <div x-show="visible" x-bind:class="{'animate-zoo2 ':visible}"
             class="h-full w-full bg-bg-m bg-108% lg:bg-100% bg-center lg:animate-zoo m-1 rounded-lg grid grid-cols-stack relative">
@@ -88,7 +88,7 @@
     </div>
     <!-- screen2 -->
     <div x-data="{visible:false}" x-intersect:enter="visible = true" x-intersect:leave="visible = false"
-        class="h-screen w-screen overflow-hidden">
+        class="container h-screen overflow-hidden">
         <!-- frem post 2 -->
         <div x-show="visible" x-bind:class="{'animate-zoo2':visible}"
             class="h-full w-full bg-bg-m bg-108% lg:bg-100% bg-center lg:animate-zoo m-1 rounded-lg overflow-hidden">
@@ -122,7 +122,7 @@
     </div>
     <!-- screen 3 -->
     <div x-data="{lihat:false}" x-intersect:enter="lihat = true" x-intersect:leave="lihat = false"
-        class=" h-screen w-screen">
+        class="container h-screen">
         <!-- frame post 3 -->
         <div x-show="lihat" x-bind:class="{'animate-zoo2':lihat}"
             class="h-full w-full bg-bg-m bg-108% lg:bg-100% bg-center lg:animate-zoo m-1 rounded-lg p-6  overflow-y-scroll scrollbar-none">
@@ -179,7 +179,7 @@
                 <h1 class="text-4xl font-light mb-1">Susunan<strong class="text-turqu"> Acara</strong></h1>
                 <!-- acara 1 -->
                  <div x-data="{visible:false}" x-intersect:enter="visible = true" x-intersect:leave="visible = false">
-                     <div x-bind:class="{'animate-bintang-show':visible}" class="mt-6 w-full font-sofia text-base shadow-lg shadow-turqu rounded-xl p-1">
+                     <div x-bind:class="{'animate-bintang-show':visible}" class="mt-6 w-full font-sofia text-base shadow-lg shadow-turqu rounded-xl p-1 bg-d-d bg-top bg-100% bg-opacity-45">
                          <h1 class="font-thin">Pengajian Bulanan Riyaadlul Jannah Desa Padasuka</h1>
                          <div class="flex justify-center items-center w-full">
                              <div class="w-full">
@@ -200,7 +200,7 @@
                  </div>
                 <!-- acara 2 -->
                 <div x-data="{visible:false}" x-intersect:enter="visible = true" x-intersect:leave="visible = false">
-                    <div x-bind:class="{'animate-bintang-show':visible}" class="mt-6 w-full font-sofia text-base shadow-lg shadow-turqu rounded-xl p-1">
+                    <div x-bind:class="{'animate-bintang-show':visible}" class="mt-6 w-full font-sofia text-base shadow-lg shadow-turqu rounded-xl p-1 bg-d-d bg-top bg-100% bg-opacity-45">
                         <h1 class="font-thin">Tabligh Akbar</h1>
                         <div class="flex justify-center items-center w-full">
                             <div class="w-full">
@@ -247,7 +247,7 @@
     </div>
     <!-- screen 4 -->
     <div x-data="{lihat:false}" x-intersect:enter="lihat = true" x-intersect:leave="lihat = false"
-    class=" h-screen w-screen">
+    class=" h-screen container">
     <!-- frame post 4 -->
     <div x-show="lihat" x-bind:class="{'animate-zoo2':lihat}"
         class="h-full w-full bg-bg-m bg-108% lg:bg-100% bg-center lg:animate-zoo m-1 rounded-lg p-6  overflow-y-scroll scrollbar-none">
